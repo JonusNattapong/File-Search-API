@@ -774,6 +774,65 @@ header {
     transform: rotate(180deg);
 }
 
+/* Markdown Table Styles */
+.message-content table.markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-content table.markdown-table thead {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+}
+
+.message-content table.markdown-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid #1e40af;
+}
+
+.message-content table.markdown-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.message-content table.markdown-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.message-content table.markdown-table tbody tr:hover {
+    background-color: #e0e7ff;
+}
+
+.message-content table.markdown-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #334155;
+}
+
+.message-content table.markdown-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Make tables responsive */
+@media (max-width: 768px) {
+    .message-content table.markdown-table {
+        font-size: 12px;
+    }
+    
+    .message-content table.markdown-table th,
+    .message-content table.markdown-table td {
+        padding: 8px 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;

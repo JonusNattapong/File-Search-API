@@ -292,38 +292,8 @@ function formatText(text) {
   // Remove excessive blank lines (more than 2 consecutive newlines)
   formatted = formatted.replace(/\n{3,}/g, "\n\n");
 
-  // Tables (markdown table format)
-  // Match tables like:
-  // | Header 1 | Header 2 |
-  // |----------|----------|
-  // | Cell 1   | Cell 2   |
-  formatted = formatted.replace(/^\|(.+)\|\s*$/gm, (match, content) => {
-    const cells = content
-      .split("|")
-      .map((cell) => cell.trim())
-      .filter((cell) => cell);
-
-    // Check if this is a separator row (contains only dashes and spaces)
-    if (cells.every((cell) => /^[\s\-:]+$/.test(cell))) {
-      return ""; // Skip separator rows
-    }
-
-    // Determine if this is a header row (next line is separator)
-    const lines = formatted.split("\n");
-    const currentIndex = lines.indexOf(match);
-    const nextLine = lines[currentIndex + 1];
-    const isHeader = nextLine && /^\|[\s\-:]+\|/.test(nextLine);
-
-    const tag = isHeader ? "th" : "td";
-    const cellsHtml = cells.map((cell) => `<${tag}>${cell}</${tag}>`).join("");
-
-    return `<tr>${cellsHtml}</tr>`;
-  });
-
-  // Wrap table rows in <table> tag
-  formatted = formatted.replace(/(<tr>.*?<\/tr>\s*)+/gs, (match) => {
-    return `<table>${match}</table>`;
-  });
+  // Parse and convert Markdown tables
+  formatted = parseMarkdownTable(formatted);
 
   // Headers (## Header)
   formatted = formatted.replace(/^### (.+)$/gm, "<h4>$1</h4>");
@@ -359,6 +329,91 @@ function formatText(text) {
   formatted = formatted.replace(/<p>\s*<\/p>/g, "");
 
   return formatted;
+}
+
+// Parse Markdown Table into HTML
+function parseMarkdownTable(text) {
+  const lines = text.split('\n');
+  let result = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    
+    // Check if this line starts a table (contains | at start and end)
+    if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
+      const tableLines = [];
+      
+      // Collect all consecutive table lines
+      while (i < lines.length && lines[i].trim().startsWith('|') && lines[i].trim().endsWith('|')) {
+        tableLines.push(lines[i]);
+        i++;
+      }
+      
+      // Convert table lines to HTML
+      if (tableLines.length >= 2) {
+        const htmlTable = convertTableToHTML(tableLines);
+        result.push(htmlTable);
+      } else {
+        // Not a valid table, keep original lines
+        result.push(...tableLines);
+      }
+    } else {
+      result.push(line);
+      i++;
+    }
+  }
+  
+  return result.join('\n');
+}
+
+// Convert Markdown table lines to HTML table
+function convertTableToHTML(tableLines) {
+  const rows = [];
+  let isFirstRow = true;
+  
+  for (let i = 0; i < tableLines.length; i++) {
+    const line = tableLines[i].trim();
+    
+    // Skip separator rows (contains only |, -, :, and spaces)
+    if (/^\|[\s\-:|]+\|$/.test(line)) {
+      continue;
+    }
+    
+    // Parse table cells
+    const cells = line
+      .substring(1, line.length - 1) // Remove leading and trailing |
+      .split('|')
+      .map(cell => cell.trim());
+    
+    // Determine if this is a header row (first row before separator)
+    const isHeader = isFirstRow && i + 1 < tableLines.length && /^\|[\s\-:|]+\|$/.test(tableLines[i + 1].trim());
+    
+    if (isHeader) {
+      const headerCells = cells.map(cell => `<th>${cell}</th>`).join('');
+      rows.push(`<thead><tr>${headerCells}</tr></thead>`);
+      isFirstRow = false;
+    } else if (!isFirstRow || i === tableLines.length - 1) {
+      // Body rows
+      const bodyCells = cells.map(cell => `<td>${cell}</td>`).join('');
+      
+      // Start tbody if this is the first body row
+      if (rows.length > 0 && !rows[rows.length - 1].includes('tbody')) {
+        rows.push('<tbody>');
+      } else if (rows.length === 0) {
+        rows.push('<tbody>');
+      }
+      
+      rows.push(`<tr>${bodyCells}</tr>`);
+    }
+  }
+  
+  // Close tbody if it was opened
+  if (rows.length > 0 && rows[rows.length - 1].includes('<tr>')) {
+    rows.push('</tbody>');
+  }
+  
+  return `<table class="markdown-table">${rows.join('')}</table>`;
 }
 
 // Add message to chat
