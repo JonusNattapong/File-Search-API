@@ -154,3 +154,47 @@ openrouter-document-chat/
 - Chat history is maintained per session but not persisted
 - The application runs on port 8000 by default
 - Document content is truncated if too long to fit model context limits
+
+## 📜 License
+
+This project is licensed under a **MIT License with Organizational Use Restriction**.
+
+### Usage Terms:
+
+✅ **Allowed:**
+- Personal use
+- Educational use
+- Non-commercial projects
+- Modification and distribution for personal use
+
+⚠️ **Requires Permission:**
+- Use within any organization, company, or commercial entity
+- Commercial projects or products
+- Enterprise deployments
+
+### How to Request Organizational Use Permission:
+
+If you want to use this software in an organization or for commercial purposes, please:
+1. Open an issue on [GitHub](https://github.com/JonusNattapong/File-Search-API/issues)
+2. Contact the repository owner
+3. Describe your intended use case
+
+---
+
+### ข้อกำหนดการใช้งาน (Thai):
+
+✅ **อนุญาต:**
+- ใช้งานส่วนบุคคล
+- ใช้เพื่อการศึกษา
+- โปรเจกต์ที่ไม่แสวงหากำไร
+- ดัดแปลงและแจกจ่ายเพื่อการใช้งานส่วนตัว
+
+⚠️ **ต้องขออนุญาต:**
+- การใช้งานภายในองค์กร บริษัท หรือหน่วยงานทางการค้า
+- โปรเจกต์เชิงพาณิชย์
+- การติดตั้งใช้งานในองค์กร
+
+**หากต้องการขออนุญาตใช้งานในองค์กร:**
+กรุณาติดต่อผ่าน [GitHub Issues](https://github.com/JonusNattapong/File-Search-API/issues) หรือเจ้าของโปรเจกต์โดยตรง
+
+See [LICENSE](LICENSE) file for full terms.
