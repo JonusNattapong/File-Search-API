@@ -1,0 +1,54 @@
+MIT License with Organizational Use Restriction
+
+Copyright (c) 2024 Jonus Nattapong
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, merge, publish, and distribute the Software for PERSONAL and
+NON-COMMERCIAL purposes only, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+2. ORGANIZATIONAL USE RESTRICTION: Use of this Software within any organization,
+   company, or commercial entity requires prior written permission from the
+   copyright holder. To request permission for organizational use, please contact
+   the repository owner at https://github.com/JonusNattapong/File-Search-API
+
+3. Attribution must be given to the original author in any derivative works or
+   projects using this Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+THAI VERSION / เวอร์ชันภาษาไทย:
+
+ลิขสิทธิ์ MIT พร้อมข้อจำกัดการใช้งานในองค์กร
+
+ลิขสิทธิ์ (c) 2024 โจนัส นัทธพงศ์
+
+อนุญาตให้บุคคลใดก็ตามสามารถใช้งาน คัดลอก ดัดแปลง เผยแพร่ และแจกจ่าย
+ซอฟต์แวร์นี้และเอกสารประกอบได้ฟรี สำหรับการใช้งานส่วนบุคคลและไม่แสวงหากำไร
+เท่านั้น โดยมีเงื่อนไขดังต่อไปนี้:
+
+1. ต้องแสดงประกาศลิขสิทธิ์และเงื่อนไขการใช้งานนี้ในทุกสำเนาของซอฟต์แวร์
+
+2. ข้อจำกัดการใช้งานในองค์กร: การนำซอฟต์แวร์นี้ไปใช้งานภายในองค์กร บริษัท 
+   หรือหน่วยงานทางการค้าใดๆ จะต้องได้รับอนุญาตเป็นลายลักษณ์อักษรจากเจ้าของ
+   ลิขสิทธิ์ก่อน หากต้องการขออนุญาตสำหรับการใช้งานในองค์กร กรุณาติดต่อที่
+   https://github.com/JonusNattapong/File-Search-API
+
+3. ต้องระบุที่มาและให้เครดิตแก่ผู้สร้างต้นฉบับในงานดัดแปลงหรือโปรเจกต์ที่ใช้
+   ซอฟต์แวร์นี้
+
+ซอฟต์แวร์นี้มีให้ "ตามสภาพ" โดยไม่มีการรับประกันใดๆ ไม่ว่าโดยชัดแจ้งหรือโดย
+นัยใดๆ รวมถึงแต่ไม่จำกัดเพียงการรับประกันความสามารถในการค้า ความเหมาะสมสำหรับ
+วัตถุประสงค์เฉพาะ และการไม่ละเมิดสิทธิ์ ผู้เขียนหรือเจ้าของลิขสิทธิ์จะไม่รับผิด
+ต่อการเรียกร้องค่าเสียหาย หรือความรับผิดอื่นใดที่เกิดจากการใช้งานซอฟต์แวร์นี้
