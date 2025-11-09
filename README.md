@@ -4,7 +4,7 @@ Chat with your documents using OpenRouter and FastAPI
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.121+-green.svg)](https://fastapi.tiangolo.com/)
-[![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--4o--mini-orange.svg)](https://openrouter.ai/)
+[![OpenRouter](https://img.shields.io/badge/OpenRouter-Model-orange.svg)](https://openrouter.ai/)
 
 ## 📸 Screenshots
 
