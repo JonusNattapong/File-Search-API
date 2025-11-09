@@ -9,10 +9,10 @@ Chat with your documents using OpenRouter and FastAPI
 ## 📸 Screenshots
 
 ### Upload Interface
-![Upload Interface](Screenshot%202025-11-09%20173330.png)
+![Upload Interface](static/example1.png)
 
 ### Chat Interface
-![Chat Interface](Screenshot%202025-11-09%20175415.png)
+![Chat Interface](static/example2.png)
 
 ## ✨ Features
 
